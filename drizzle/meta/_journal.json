@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1716524822471,
+      "tag": "0000_kind_greymalkin",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1716527981845,
+      "tag": "0001_little_shinobi_shaw",
+      "breakpoints": true
+    }
+  ]
+}

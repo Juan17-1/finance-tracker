@@ -1,5 +1,9 @@
 import { HeaderLogo } from "@/components/ui/header-logo";
+import { UserButton, ClerkLoading, ClerkLoaded } from "@clerk/nextjs";
 import { Navigation } from "@/components/ui/navigation";
+import { Loader2 } from "lucide-react";
+import { WelcomeMsg } from "@/components/ui/welcome-msg";
+
 export const Header = () => {
   return (
     <header className="bg-gradient-to-b from-blue-700 to-blue-500 px-4 py-8 lg:px-14 pb-36">
@@ -9,7 +13,14 @@ export const Header = () => {
             <HeaderLogo />
             <Navigation />
           </div>
+          <ClerkLoaded>
+            <UserButton afterSignOutUrl="/" />
+          </ClerkLoaded>
+          <ClerkLoading>
+            <Loader2 className="size-8 animate-spin text-slate-400" />
+          </ClerkLoading>
         </div>
+        <WelcomeMsg />
       </div>
     </header>
   );
