@@ -57,7 +57,7 @@ app
         );
       }
 
-      const data = await db
+      const [data] = await db
         .insert(accounts)
         .values({
           id: createId(),
@@ -66,7 +66,7 @@ app
         })
         .returning();
 
-      return c.json({});
+      return c.json({ data });
     }
   );
 
