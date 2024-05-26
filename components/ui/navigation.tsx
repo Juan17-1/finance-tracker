@@ -18,7 +18,7 @@ const routes = [
     label: "Transactions",
   },
   {
-    href: "/accoounts",
+    href: "/accounts",
     label: "Accounts",
   },
   {
@@ -34,11 +34,14 @@ const routes = [
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname(); // Moved this line to the top
   const isMobile = useMedia("(max-width: 1024px)", false);
+
   const onClick = (href: string) => {
     router.push(href);
     setIsOpen(false);
   };
+
   if (isMobile) {
     return (
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -46,7 +49,7 @@ export const Navigation = () => {
           <Button
             variant="outline"
             size="sm"
-            className="font-noraml bg-white/10 hover:bg-white/20 hover:text-white border-none focus-visible:ring-offset-0 focus-visible:ring-transparent outline-none text-white focus:bg-white/30 transition"
+            className="font-normal bg-white/10 hover:bg-white/20 hover:text-white border-none focus-visible:ring-offset-0 focus-visible:ring-transparent outline-none text-white focus:bg-white/30 transition"
           >
             <Menu className="size-4" />
           </Button>
@@ -68,7 +71,7 @@ export const Navigation = () => {
       </Sheet>
     );
   }
-  const pathname = usePathname();
+
   return (
     <nav className="hidden lg:flex items-center gap-x-2 overflow-x-auto">
       {routes.map((route) => (
