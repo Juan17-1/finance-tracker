@@ -2,18 +2,17 @@
 
 import { useMountedState } from "react-use";
 import { NewAccountSheet } from "@/features/components/new-account-sheet";
-import { useEffect, useState } from "react";
+import { EditAccountSheet } from "@/features/components/edit-account-sheet";
 
 export const SheetProvider = () => {
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const isMounted = useMountedState();
 
   if (!isMounted) return null;
+
   return (
     <>
       <NewAccountSheet />
+      <EditAccountSheet />
     </>
   );
 };
