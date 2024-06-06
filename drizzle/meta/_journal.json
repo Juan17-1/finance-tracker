@@ -15,6 +15,13 @@
       "when": 1716527981845,
       "tag": "0001_little_shinobi_shaw",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1717458083604,
+      "tag": "0002_flaky_sumo",
+      "breakpoints": true
     }
   ]
 }
